@@ -1,7 +1,7 @@
 #!/bin/sh
 # require jre/jdk 1.8+
-# copy from by wukm <wkmnet@hotmail.com>
-# by wukunmeng
+# copy from by <wukunmeng@gmail.com>
+# modify by wukunmeng
 set -e
 app_dir=$(cd $(dirname $0); pwd)
 echo "application home: $app_dir"
@@ -15,7 +15,7 @@ JAVA_OPTS="-server -Xms256M -Xmx256M -Xss256k
           -XX:+HeapDumpOnOutOfMemoryError
           -XX:+PrintGCApplicationStoppedTime -Xloggc:log/gc.log
           -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=5 -XX:GCLogFileSize=1024k
-          -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8 -Dapp=$main"
+          -Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8"
 pid=-1
 start() {
     pid=`ps -ef | grep java | grep $classpath | grep -v grep | awk '{print $2}'`
