@@ -32,6 +32,12 @@ public class Constants {
     //请求ID
     public final static String X_REQUEST_ID = "X-REQUEST-ID";
 
+    public final static String ZOOKEEPER_CONFIG = "ZOOKEEPER";
+
+    public final static String SERVER_ENV = "SERVER_ENV";
+
+    public final static String APPLICATION_CONFIG = "/root/system/config";
+
     //
     public final static String DATE_TIME_FORMAT_PATTERN = "yyyy-MM-dd HH:mm:ss";
 }
