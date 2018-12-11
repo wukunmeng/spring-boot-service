@@ -10,6 +10,10 @@
  */
 package org.spring.boot.base.util;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
+
+import java.util.Date;
+
 /**
  * Create with IntelliJ IDEA
  * Project name : spring-boot-service
@@ -27,6 +31,10 @@ public class Commons {
         /**
             公共静态
          **/
+    }
+
+    public static String formatNow(){
+        return DateFormatUtils.format(new Date(), Constants.DATE_TIME_FORMAT_PATTERN);
     }
 
 }

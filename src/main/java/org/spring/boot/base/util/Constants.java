@@ -28,4 +28,10 @@ public class Constants {
     }
 
     public final static String CHARSET_UTF_8 = "UTF-8";
+
+    //请求ID
+    public final static String X_REQUEST_ID = "X-REQUEST-ID";
+
+    //
+    public final static String DATE_TIME_FORMAT_PATTERN = "yyyy-MM-dd HH:mm:ss";
 }
