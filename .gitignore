@@ -2,6 +2,7 @@
 .idea/
 build/
 settings.gradle
+out/
 
 # Compiled class file
 *.class
