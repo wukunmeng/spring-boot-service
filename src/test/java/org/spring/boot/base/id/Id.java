@@ -47,6 +47,10 @@ public class Id extends BaseTest {
         System.out.println(mod);
         System.out.println(sum);
         System.out.println(CHECK_CODE_LIST[mod]);
+        System.out.println("地址码:" + id.substring(0,6));
+        System.out.println("生日:" + id.substring(6,14));
+        System.out.println("顺序码:" + NumberUtils.toInt(id.substring(14,17)));
+        System.out.println(NumberUtils.toInt(id.substring(14,17)) % 2 == 0 ? "女":"男");
         Assert.assertEquals(String.valueOf(id.toCharArray()[17]), String.valueOf(CHECK_CODE_LIST[mod]));
     }
 
