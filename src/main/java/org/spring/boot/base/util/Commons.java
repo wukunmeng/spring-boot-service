@@ -72,7 +72,7 @@ public class Commons {
                     System.out.println(String.format("can not load data from : %s", key.toString()));
                 } else {
                     Properties config = Commons.loadProperty(data);
-                    System.out.println(String.format("load zookeeper config : {}", JSONObject.toJSONString(config)));
+                    System.out.println(String.format("load zookeeper config : %s", JSONObject.toJSONString(config)));
                     if(config != null && config.size() > 0){
                         String[] args = new String[config.size()];
                         AtomicInteger index = new AtomicInteger(0);
@@ -84,11 +84,11 @@ public class Commons {
                     }
                 }
             } else {
-                System.out.println(String.format("{} not exist in zookeeper", key.toString()));
+                System.out.println(String.format("%s not exist in zookeeper", key.toString()));
             }
         } catch (Exception e) {
             //ignore
-            System.out.println(String.format("{} can not read from zookeeper", key.toString()));
+            System.out.println(String.format("%s can not read from zookeeper", key.toString()));
         }
         return null;
     }
