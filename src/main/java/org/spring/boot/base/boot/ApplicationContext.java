@@ -18,7 +18,9 @@ import org.slf4j.LoggerFactory;
 import org.spring.boot.base.util.Commons;
 import org.spring.boot.base.util.Constants;
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ComponentScan;
 
 /**
@@ -47,17 +49,14 @@ public class ApplicationContext {
                 String[] keys = Commons.remoteArgs();
                 logger.info("read config:{}", JSONObject.toJSONString(keys, SerializerFeature.PrettyFormat));
                 if(keys == null || keys.length == 0){
+                    logger.info("run config:{}", JSONObject.toJSONString(args, SerializerFeature.PrettyFormat));
                     spring.run(args);
-                }
-                if(args != null && args.length > 0){
+                } else if(keys != null && keys.length > 0){
                     String[] all = new String[args.length + keys.length];
                     System.arraycopy(args,0,all,0,args.length);
                     System.arraycopy(keys,0,all,args.length,keys.length);
                     logger.info("run config:{}", JSONObject.toJSONString(all, SerializerFeature.PrettyFormat));
                     spring.run(all);
-                } else {
-                    logger.info("run config:{}", JSONObject.toJSONString(keys, SerializerFeature.PrettyFormat));
-                    spring.run(keys);
                 }
             } else {
                 spring.run(args);
