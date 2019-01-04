@@ -35,13 +35,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * ---------------------------------
  * To change this template use File | Settings | File and Code Templates.
  */
-public class Commons {
-
-    private Commons(){
-        /**
-            公共静态
-         **/
-    }
+public abstract class Commons {
 
     public static String formatNow(){
         return DateFormatUtils.format(new Date(), Constants.DATE_TIME_FORMAT_PATTERN);
