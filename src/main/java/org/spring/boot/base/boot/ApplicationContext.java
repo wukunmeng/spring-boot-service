@@ -64,6 +64,7 @@ public class ApplicationContext {
             } else {
                 applicationContext = spring.run(args);
             }
+            //参照 @PreDestroy
             Runtime.getRuntime().addShutdownHook(new Thread(){
                 @Override
                 public void run() {

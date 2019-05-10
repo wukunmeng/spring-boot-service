@@ -22,6 +22,7 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
+import org.springframework.http.HttpHeaders;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -51,7 +52,7 @@ public class System {
     private ResourceLoader resourceLoader;
 
     @ResponseBody
-    @RequestMapping(value = "/")
+    @RequestMapping(value = "/_version")
     public Object index(){
         String metaFile = "classpath:version.me";
         try {
@@ -78,6 +79,6 @@ public class System {
         } catch (IOException e) {
             logger.warn("read file:{}, exception:{}", metaFile, e.getMessage());
         }
-        return ImmutableBiMap.of("ok", true);
+        return ImmutableBiMap.of("ok", true, "referer", HttpHeaders.REFERER);
     }
 }
